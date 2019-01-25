@@ -1,3 +1,4 @@
+
 input[type=text] {
     width: 300px;
     box-sizing: border-box;
@@ -13,23 +14,28 @@ input[type=text] {
   }
   
 input[type=text]:focus {
-    width: 80%;
+    width: 50%;
 }
 
-#title{
+.jumbotron, h1{
+    background-color: white;
     font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 200px;
-    margin: 0px 0px -10px 0px;
-}
-.jumbotron {
     text-align: center;
-    background-color: white;
 }
-.form{
+.content{
+    text-align: center;
+    margin: -100px 0px 0px 25px;
+}
+.title{
     text-align: center;
 }
 .row{
     display: flex;
     justify-content: center;
+    margin: -100px 0px 0px 25px;
     text-align: center;
+}
+.checkbox{
+    margin: 10px;
 }
