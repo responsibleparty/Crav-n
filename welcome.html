@@ -2,33 +2,103 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crav'n - Let's Eat!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crav'n - Welcome</title>
+    <!--Stylesheet and Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Favicon-->
+    <link href="assets/images/utensils.png" rel="icon">
+    <!--Google Font and Jquery-->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
 </head>
 
 <body>
-
-    <div class="container-fluid" class="bigContainer">
-
-        <div class="title" class="row">
+    <!--Jumbotron Enter page-->
+    <div class="container-fluid bigContainer">
+        <div class="title row">
             <div class="jumbotron">
                 <h1>Crav'n</h1> 
             </div>
         </div>
-
-        <div class="content" class="row">
+        <div class="content row welcomeDescription">
             <div class="welcomeDescription" id="welcomeDescription">
                 <p class="description">Make your craving a reality! Enter to learn more.</p>
-                <p><a class="btn btn-primary btn-large" href="home.html">Enter</a></p>
+                <p><a class="btn btn-primary btn-large" id="submitEnter" href="search.html">Enter</a></p>
             </div>
         </div>
-
+    </div>
+    <!--Form Search-->
+    <div class="container-fluid bigContainer">
+        <div class="content row">
+            <form class="form" role="form" id="formSearch">
+                <div class="form-group">
+                    <label for="searchField"></label>
+                        <input type="text" name="search" placeholder="I am craving..." id="food-input">
+                </div>
+                <div class="checkbox">
+                    <label class="checkbox"><input type="checkbox" value="" name="restaurantCheckbox"> Restaurants</label>
+                    <label class="checkbox"><input type="checkbox" value="" name="recipeCheckbox"> Recipes</label>
+                    <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
+                </div> 
+            </form>
+        </div>  
+        <!--Restaurant and Recipe Search Page-->
+        <div class="Site">
+            <div class="container-fluid bigContainer Site-content">
+                <div class="row" id="searchResults">
+                    <div class="col-md-5">
+                        <h3>Restaurants near you:</h3>
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Image</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">Reviews</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="recipeCard">
+                            <h3>
+                                Recipes to try:
+                            </h3>
+                            <div class="card">
+                                <h5 class="recipe-header">
+                                    
+                                </h5>
+                                <div class="card-body">
+                                    <p class="recipe-text">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
      </div>
-
+<footer>
+    <div class="container">
+        Copyright &copy;
+    </div>
+</footer>
 </body>
+<script type="text/javascript" src="assets/javascript/code.js"></script>
 </html>

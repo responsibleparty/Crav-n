@@ -2,40 +2,47 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crav'n - Let's Eat!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crav'n - Search</title>
+    <!--Stylesheet and Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Favicon-->
+    <link href="assets/images/utensils.png" rel="icon">
+    <!--Google Font and Jquery-->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
 </head>
 
 <body>
-
-    <div class="container-fluid" class="bigContainer">
-        <div class="title" class="row">
+    <div class="container-fluid bigContainer">
+        <div class="title row">
             <div class="jumbotron">
                 <h1>Crav'n</h1> 
             </div>
         </div>
-
-        <div class="content" class="row">
-            <form class="form" role="form">
-
+        <div class="content row">
+            <form class="form" role="form" id="formSearch">
                 <div class="form-group">
                     <label for="searchField"></label>
-                        <input type="text" name="search" placeholder="I am craving...">
+                        <input type="text" name="search" placeholder="I am craving..." id="food-input">
                 </div>
-
                 <div class="checkbox">
-                    <label class="checkbox"><input type="checkbox" value="">Restaurants</label>
-                    <label class="checkbox"><input type="checkbox" value="">Recipes</label>
+                    <label class="checkbox"><input type="checkbox" value="" name="restaurantCheckbox" checked> Restaurants</label>
+                    <label class="checkbox"><input type="checkbox" value="" name="recipeCheckbox" checked> Recipes</label>
                     <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
                 </div> 
             </form>
         </div>
      </div>
-
+<footer>
+    <div class="container">
+        Copyright &copy;
+    </div>
+</footer>
 </body>
+<script type="text/javascript" src="assets/javascript/code.js"></script>
 </html>
