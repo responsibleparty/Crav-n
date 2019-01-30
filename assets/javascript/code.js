@@ -89,16 +89,13 @@ function recipeSearch(event){
 }
 
 $(document).ready(function(){
-    $(".welcomeDescription").show();
-    // $("#formSearch").toggle(onpagehide);
-    $("#searchResults").toggle(onpagehide);
 
 
     $('#submitEnter').keyup(function() {
         if ($(this).val().length > 0) {
            $('#formSearch').show();
         } else {
-           $('#submitbutton').hide();
+           $('#submitButton').hide();
         }
     });
     $("#submitButton").on("click", function(){
