@@ -75,10 +75,10 @@ function recipeSearch(event){
     }).then(function(response){
     var data = JSON.parse(response);
         console.log(data);
-        for (i = 0; i < response.results; i++) {
-            dogTitle = response.results[i].title;
-            ingredients = response.results[i].ingredients;
-            link = response.results[i].href;
+        for (i = 0; i < data.results.length; i++) {
+            dogTitle = data.results[i].title;
+            ingredients = data.results[i].ingredients;
+            link = data.results[i].href;
         }
         console.log(dogTitle);
         console.log(ingredients);
