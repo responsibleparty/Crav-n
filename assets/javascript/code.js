@@ -32,10 +32,10 @@ $.ajax({
 .then(function(response){
     console.log(response);
     for(j = 0; j < response.businesses.length; j++){
-        yelpName = response.businesses[i].name;
-        yelpContact.phone = response.businesses[i].display_phone;
-        yelpContact.address = response.businesses[i].location;
-        yelpRating = response.businesses[i].rating;
+        yelpName = response.businesses[j].name;
+        yelpContact.phone = response.businesses[j].display_phone;
+        yelpContact.address = response.businesses[j].location;
+        yelpRating = response.businesses[j].rating;
     }
     console.log(yelpName);
     console.log(yelpContact);
@@ -46,7 +46,7 @@ $.ajax({
 
 
 var dogURl = "http://www.recipepuppy.com/api/?q=";
-var dogQ = "eggs";
+var dogQ = "bacon";
 //Complete URl with parameter
 var dogFullUrl = corsProxy + dogURl + dogQ ;
 
@@ -59,13 +59,16 @@ $.ajax({
     method: "GET"
 }).then(function(response){
    var data = JSON.parse(response);
-    console.log(data);
-    for (i = 0; i < response.results; i++) {
-         dogTitle = response.results[i].title;
-         ingredients = response.results[i].ingredients;
-         link = response.results[i].href;
+    //console.log(data);
+    console.log('this is working!!')
+    for (var i = 0; i <  data.results.length; i++) {
+        console.log('this is working')
+         dogTitle = data.results[i].title;
+         ingredients = data.results[i].ingredients;
+         link = data.results[i].href;
+         console.log('dogTitle', dogTitle);
+         console.log('ingredients', ingredients);
+         console.log('link', link);
     }
-    console.log(dogTitle);
-    console.log(ingredients);
-    console.log(link);
+
 })
