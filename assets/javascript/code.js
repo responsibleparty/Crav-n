@@ -10,21 +10,23 @@ var apiKey = 'A6gmtllBxdAgu_ikQkG56eG9de48BNQVoLuwbxlnVlA-qySFfFokZCkAipK930RvAJ
 // GET parameters to include
 var params = {
     term: "food",
-    location: "San Diego"
+    location: "San Diego",
+    limit: 10
 };
 
-var yelpName = ""
-var yelpContact = {
-    phone: "",
-    address:""
-};
-var yelpRating = "";
-var yelpImageUrl = "";
+// var yelpName = ""
+// var yelpContact = {
+//     phone: "",
+//     address:""
+// };
+// var yelpRating = "";
+// var yelpImageUrl = "";
 
 var userInput = "";
 
 // Make API request for Yelp
 function yelpSearch(){
+    $("#yelpCards").empty();
     params.term = userInput;
     $.ajax ({
         url: fullUrl,
@@ -38,22 +40,38 @@ function yelpSearch(){
     .then(function(response){
         console.log(response);
         for(j = 0; j < response.businesses.length; j++){
-            yelpName = response.businesses[j].name;
-            yelpContact.phone = response.businesses[j].display_phone;
-            yelpContact.address = response.businesses[j].location;
-            yelpRating = response.businesses[j].rating;
-            yelpImageUrl = response.businesses[j].image_url;
-
+            // Create a function call for card in the restaurant search
+            createYelpCard(response.businesses[j])
         }
-        console.log(yelpName);
-        console.log(yelpContact);
-        console.log(yelpRating);
-        console.log(yelpImageUrl);
         $("#searchResults").show();
         $("#restaurantResults").show();
     });
 }
+function createYelpCard(businessInfo) {
+    
+    var card =
+        '<div class="card">' +
+            '<div class="card-header">' +
+                '<div class="aaa">' + yelpName + '</div>' +
+            '</div>' +
+            '<div class="card-body">' +
+                '<div class="aaa">Phone: ' + yelpContact.phone + '</div>' +
+                '<div class="aaa">Address: <br>' +
+                    yelpContact.address.display_address[0] +
+                    '<br>' +
+                    yelpContact.address.display_address[1] +
+                    '</div>' +
+                '<div class="aaa">Rating: ' + yelpRating + '</div>' +
+                '<div class="aaa">' +
+                    '<img class="aaa" src="' + yelpImageUrl + '">' +
+                '</div>' +
+            '</div>' +
+        '</div>';
 
+    // $("#yelpCards").append(card2);
+    document.getElementById("yelpCards").innerHTML += card;
+    
+}
 
 // API for Recipe Puppy
 
