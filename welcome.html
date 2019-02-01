@@ -12,23 +12,73 @@
 </head>
 
 <body>
-
-    <div class="container-fluid" class="bigContainer">
-
-        <div class="title" class="row">
-            <div class="jumbotron">
+    <!--Jumbotron Enter page-->
+    <div class="container-fluid bigContainer">
+        <div class="title row">
+            <div class="jumbotron" id="jumbotronContainer">
                 <h1>Crav'n</h1> 
+                <div class="content welcomeDescription">
+                        <p class="description">Make your craving a reality! Enter to learn more.</p>
+                        <p><a class="btn btn-primary btn-large" id="submitEnter">Enter</a></p>
+                    </div>
             </div>
         </div>
-
-        <div class="content" class="row">
-            <div class="welcomeDescription" id="welcomeDescription">
-                <p class="description">Make your craving a reality! Enter to learn more.</p>
-                <p><a class="btn btn-primary btn-large" href="home.html">Enter</a></p>
+       
+    </div>
+    <!-- Form Search -->
+    <div class="container-fluid bigContainer">
+        <div class="content row">
+            <form class="form" role="form" id="formSearch">
+                <div class="form-group">
+                    <label for="searchField"></label>
+                        <input type="text" name="search" placeholder="I am craving..." id="food-input">
+                </div>
+                <div class="checkboxContainer">
+                    <label class="checkbox"><input type="checkbox" value="" name="restaurantCheckbox"> Restaurants</label>
+                    <label class="checkbox"><input type="checkbox" value="" name="recipeCheckbox"> Recipes</label>
+                    <button id="submitSearch" type="button" class="btn btn-primary">Submit</button>
+                </div> 
+            </form>
+        </div>  
+        <!--Restaurant and Recipe Search Page-->
+        <div class="Site">
+            <div class="container-fluid bigContainer Site-content">
+                <div class="row" id="searchResults">
+                    <!--Restaurants-->
+                    <div class="container-fluid col-md-6" id="restaurantResults" id="restaurantImages">
+                        <h3>Restaurants near you:</h3>
+                        <div id="yelpCards">
+                            <div class="yelpWrapper">
+                                <div class="yelpImages">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Recipes-->
+                     <div class="container-fluid col-md-6" id="recipeResults">
+                        <div class="recipeCard">
+                            <h3>
+                                Recipes to try:
+                            </h3>
+                            <div id="recipeCards">
+                                <!-- <div class="card-header recipeTitle"></div>
+                                <div class="card-body">
+                                    <p class="recipe-text">
+                                    </p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
+        </div> 
      </div>
-
+<footer>
+    <div class="container">
+        Copyright &copy;
+    </div>
+</footer>
+<script type="text/javascript" src="assets/javascript/code.js"></script>
 </body>
 </html>

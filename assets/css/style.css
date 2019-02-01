@@ -1,4 +1,55 @@
+body {
+    background: url('../images/bowl-cooking-cuisine.jpg') repeat 0 0;
+    width: 100%;
+    margin: 0;
+    height: 300px;
+    padding-top: 120px;
+    box-sizing: border-box;
+    background-blend-mode: lighten;
+    color: black;
+    
+}
+#submitEnter {
+    color: white;
+}
 
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Site-content {
+    flex: 1;
+}
+footer {
+    padding: 11px 0;
+    clear: both;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    color: black;
+   
+}
+button{
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 input[type=text] {
     width: 300px;
     box-sizing: border-box;
@@ -14,14 +65,18 @@ input[type=text] {
   }
   
 input[type=text]:focus {
-    width: 50%;
+    width: 80%;
 }
 
-.jumbotron, h1{
-    background-color: white;
+.jumbotron, h1 {
     font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 200px;
     text-align: center;
+    background-color: transparent;
+}
+
+#jumbotronContainer {
+    padding: 4rem 4rem;
 }
 .content{
     text-align: center;
@@ -36,6 +91,77 @@ input[type=text]:focus {
     margin: -100px 0px 0px 25px;
     text-align: center;
 }
+
+.welcomeDescription {
+   font-size: 18px;
+   font-family: Arial, Helvetica, sans-serif;
+   margin-top: 10px;
+}
 .checkbox{
     margin: 10px;
+}
+
+.form-group {
+    margin-top: 20px;
+
+}
+
+#submitSearch {
+    padding: 4px
+}
+
+#searchResults {
+    margin-top: 20px;
+
+}
+
+#restaurantResults {
+    display: none;
+    text-align: center;
+
+}
+
+
+.aaa{
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+   
+}
+
+.bbb {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+}
+
+
+.checkboxContainer {
+    background: white;
+ 
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
