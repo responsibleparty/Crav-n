@@ -9,7 +9,7 @@ var apiKey = 'A6gmtllBxdAgu_ikQkG56eG9de48BNQVoLuwbxlnVlA-qySFfFokZCkAipK930RvAJ
 var params = {
     term: "food",
     location: "San Diego",
-    limit: 10
+    limit: 5
 };
 // var yelpName = ""
 // var yelpContact = {
