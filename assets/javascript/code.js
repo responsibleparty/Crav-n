@@ -176,7 +176,7 @@ function recipeSearch(event){
             '</div>' +
             '<div class="card-body">' +
                 '<div class="bbb">Ingredients: ' + dogIngredients + '</div>' +
-                '<div class="bbb">' + dogImgDiv.html() + '</div>' +
+                '<div class="bbb"><img class="bbb" src="'  + dogImage + '"></div>' +
             '</div>' +
         '</div>';
     // $("#yelpCards").append(card2);
