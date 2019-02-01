@@ -117,20 +117,25 @@ input[type=text]:focus {
 
 #restaurantResults {
     display: none;
+    text-align: center;
 
 }
 
-#restaurantImages {
+
+.aaa {
     height: auto;
     width: auto;
     max-width: 300px;
     max-height: 300px;
+   
 }
 
 .checkboxContainer {
     background: white;
  
 }
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
