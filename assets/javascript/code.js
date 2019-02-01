@@ -13,14 +13,6 @@ var params = {
     limit: 10
 };
 
-// var yelpName = ""
-// var yelpContact = {
-//     phone: "",
-//     address:""
-// };
-// var yelpRating = "";
-// var yelpImageUrl = "";
-
 var userInput = "";
 
 // Make API request for Yelp
@@ -128,6 +120,41 @@ function createYelpCard(businessInfo) {
     
 }
 function createRecipeCard () {
+    var card = $("<div>");
+    card.addClass("card");
+
+    var cardHeader = $("<div>");
+    cardHeader.addClass("card-header");
+
+    var cardBody = $("<div>");
+    cardBody.addClass("card-body");
+
+    var nameDiv = $("<div>");
+    nameDiv.addClass("aaa");
+    nameDiv.text(dogTitle);
+
+    var ingredientDiv = $("<div>");
+    ingredientDiv.addClass("aaa");
+    ingredientDiv.text("Ingredients: " + ingredients);
+
+    var imgDiv = $("<div>");
+    imgDiv.addClass("aaa");
+    var img = $("<img>");
+    img.addClass("aaa");
+    img.attr('src', dogImage);
+    
+    imgDiv.append(img);
+
+    cardHeader.append(nameDiv);
+
+    cardBody.append(ingredientDiv);
+    cardBody.append(imgDiv);
+
+    card.append(cardHeader);
+    card.append(cardBody);
+
+
+
     var cardRecipe =
         '<div class="card">' +
             '<div class="card-header">' +
@@ -142,8 +169,6 @@ function createRecipeCard () {
     // $("#yelpCards").append(card2);
     document.getElementById("recipeCards").innerHTML += cardRecipe;
 }
-
-
 
 
 // API for Recipe Puppy
@@ -169,28 +194,27 @@ function recipeSearch(event){
     }).then(function(response){
         var data = JSON.parse(response);
         console.log(data);
-        for (i = 0; i < response.results; i++) {
-            dogTitle = response.results[i].title;
-            ingredients = response.results[i].ingredients;
-            link = response.results[i].href;
-            dogImage = response.results[i].thumbnail;
+        for (i = 0; i < data.response.results; i++) {
+            dogTitle = data.response.results[i].title;
+            ingredients = data.response.results[i].ingredients;
+            link = data.response.results[i].href;
+            dogImage = data.response.results[i].thumbnail;
+            createRecipeCard(data.response.results[i]);
+        
+            console.log(dogTitle);
+            console.log(ingredients);
+            console.log(link);
+            console.log(dogImage);
+            $("#searchResults").show();
+            $("#recipeResults").show();
         }
-        console.log(dogTitle);
-        console.log(ingredients);
-        console.log(link);
-        console.log(dogImage);
-        $("#searchResults").show();
-        $("#recipeResults").show();
+
     })
 
-
+    
 }
 
 $(document).ready(function(){
-    // Welcome page -show
-    // Click enter- hides welcome page
-    // Form page -shows
-
 
     $(".welcomeDescription").show();
     $('#formSearch').hide();
