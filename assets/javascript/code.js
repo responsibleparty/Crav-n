@@ -11,13 +11,7 @@ var params = {
     location: "San Diego",
     limit: 5
 };
-// var yelpName = ""
-// var yelpContact = {
-//     phone: "",
-//     address:""
-// };
-// var yelpRating = "";
-// var yelpImageUrl = "";
+
 var userInput = "";
 // Make API request for Yelp
 function yelpSearch(){
@@ -50,48 +44,13 @@ function createYelpCard(businessInfo) {
         }
     var yelpRating = businessInfo.rating;
     var yelpImageUrl = businessInfo.image_url;
-    var card = $("<div>");
-    card.addClass("card");
-    var cardHeader = $("<div>");
-    cardHeader.addClass("card-header");
-    var cardBody = $("<div>");
-    cardBody.addClass("card-body");
-    var nameDiv = $("<div>");
-    nameDiv.addClass("aaa");
-    nameDiv.text(yelpName);
-    var phoneDiv = $("<div>");
-    phoneDiv.addClass("aaa");
-    phoneDiv.text("Phone: " + yelpContact.phone);
-    var addressDiv = $("<div>");
-    addressDiv.addClass("aaa");
-    addressDiv.append("Address: ");
-    addressDiv.append("<br>");
-    addressDiv.append(yelpContact.address.display_address[0]);
-    addressDiv.append("<br>");
-    addressDiv.append(yelpContact.address.display_address[1]);
-    var ratingDiv = $("<div>");
-    ratingDiv.addClass("aaa");
-    ratingDiv.text("Rating: " + yelpRating);
-    var imgDiv = $("<div>");
-    imgDiv.addClass("aaa");
-    var img = $("<img>");
-    img.addClass("aaa");
-    img.attr('src', yelpImageUrl);
-    
-    
-    imgDiv.append(img);
-    cardHeader.append(nameDiv);
-    cardBody.append(phoneDiv);
-    cardBody.append(addressDiv);
-    cardBody.append(ratingDiv);
-    cardBody.append(imgDiv);
-    card.append(cardHeader);
-    card.append(cardBody);
+    var yelpLink = businessInfo.url;
+   
     // $("#yelpCards").append(cardYelp);
     var cardYelp =
         '<div class="card">' +
             '<div class="card-header">' +
-                '<div class="aaa">' + yelpName + '</div>' +
+                '<div class="aaa">'  + '<a href="' + yelpLink + '">' + yelpName + '</a>' + '</div>' +
             '</div>' +
             '<div class="card-body">' +
                 '<div class="aaa">Phone: ' + yelpContact.phone + '</div>' +
@@ -134,45 +93,18 @@ function recipeSearch(event){
     })
  function createRecipeCard(data) {
     var dogImage = data.thumbnail;
-    var dogTitle = data.dogTitle;
+    var dogTitle = data.title;
     var dogIngredients = data.ingredients
     var dogLink = data.href;
     console.log(dogImage);
     console.log(dogTitle);
     console.log(dogIngredients);
     console.log(dogLink);
-    var card = $("<div>");
-    card.addClass("card");
-    var cardHeader = $("<div>");
-    cardHeader.addClass("card-header");
-    var cardBody = $("<div>");
-    cardBody.addClass("card-body");
-    var nameDiv = $("<div>");
-    nameDiv.addClass("bbb");
-    nameDiv.text(dogTitle);
     
-    var linkDiv = $("<div>");
-    linkDiv.addClass("bbb");
-    linkDiv.text("link:" + dogLink);
-    var ingDiv = $("<div>");
-    ingDiv.addClass("bbb");
-    linkDiv.text(dogIngredients);
-    
-    var dogImgDiv = $("<img>");
-    dogImgDiv.addClass("bbb");
-    dogImgDiv.attr("src",dogImage);
-    dogImgDiv.append(dogImage);
-    cardHeader.append(dogTitle);
-    linkDiv.append(dogLink);
- 
-  
-    cardBody.append(dogImgDiv);
-    card.append(cardHeader);
-    card.append(cardBody);
     var cardRecipe =
         '<div class="card">' +
             '<div class="card-header">' +
-                '<div class="bbb">recipe: ' + dogTitle + '</div>' +
+                '<div class="bbb">' + '<a href="' + dogLink + '">' + dogTitle + '</a>' + '</div>' +
             '</div>' +
             '<div class="card-body">' +
                 '<div class="bbb">Ingredients: ' + dogIngredients + '</div>' +
